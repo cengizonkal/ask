@@ -1,0 +1,6 @@
+*.pyc
+.DS_Store
+backup
+chroma
+.idea
+.venv
