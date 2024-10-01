@@ -11,44 +11,30 @@ The API receives a query, retrieves relevant context from a Chroma database, and
 - `langchain_community`
 - `get_embedding_function` (Ensure you have the appropriate script/module)
 
-## Installation
+## Yükleme
 
-1. Clone the repository:
+1. Projeyi kopyala:
 
 ```bash
 git clone https://github.com/your-repo/query-data-api.git
 cd query-data-api
 ```
 
-2. Install the required packages:
+2. Gerekli kütüphaneleri yükle:
 ```bash
 pip install Flask
 pip install pysqlite3
 pip install langchain_community
 ```
 
-## Usage
-### Starting the Flask Server
-1. Start the Flask server:
+## Kullanım
+### Flask Server Başlat
+1. Sunucuyu başlat:
 ```bash
-python query_data.py
+python server.py
 ```
 
-2. Make a GET request to the /rag endpoint with the query parameter:
-```bash
-curl "http://localhost:5000/rag?query=your_question_here"
-```
-
-### Populating the Chroma Database
-
-1. Place your `PDF` documents in the data directory.
-2. Populate the Chroma database:
-
-```bash
-python populate_database.py
-```
-
-Example
+2. Örnek bir sorgu yap:
 ```bash
 curl "http://localhost:5000/rag?query=What is the capital of France?"
 ```
@@ -59,6 +45,17 @@ Response:
   "sources": ["source1", "source2", "source3"]
 }
 ```
+
+### Veritabanını Doldur
+
+1. `pdf` dosyalarını `data` klasörüne yerleştir.
+2. Veritabanını doldur:
+
+```bash
+python populate_database.py
+```
+
+
 
 
 
