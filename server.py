@@ -44,7 +44,7 @@ def query_rag_api():
         prompt_template = ChatPromptTemplate.from_template(PROMPT_TEMPLATE)
         prompt = prompt_template.format(context=context_text, question=query_text)
 
-        model = Ollama(model="llama3.1")
+        model = Ollama(model="llama3.2")
         response_text = model.invoke(prompt)
 
         sources = [doc.metadata.get("id", None) for doc, _score in results]
@@ -55,5 +55,11 @@ def query_rag_api():
         return jsonify({"error": str(e)}), 500
 
 
+@app.route('/', methods=['GET'])
+def index():
+    # return index.html
+    return app.send_static_file( 'index.html')
+
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5000, debug=True)
+

@@ -8,7 +8,7 @@ from langchain_community.document_loaders import PyPDFDirectoryLoader
 from langchain_chroma import Chroma
 
 CHROMA_PATH = "chroma"
-DATA_PATH = "data"
+DATA_PATH = "static/data"
 
 
 __import__('pysqlite3')
@@ -86,7 +86,7 @@ def calculate_chunk_ids(chunks):
     for chunk in chunks:
         source = chunk.metadata.get("source")
         page = chunk.metadata.get("page")
-        current_page_id = f"{source}:{page}"
+        current_page_id = f"{source}#{page}"
 
         # If the page ID is the same as the last one, increment the index.
         if current_page_id == last_page_id:
