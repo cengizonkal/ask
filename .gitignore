@@ -1,6 +1,6 @@
 *.pyc
 .DS_Store
-backup
 chroma
 .idea
 .venv
+__pycache__
