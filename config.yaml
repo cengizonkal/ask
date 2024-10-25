@@ -1,0 +1,25 @@
+embedding_model: "nomic-embed-text"
+llm_model: "llama3.2"
+chroma_path: "chroma"
+default_top_k: 5
+
+prompt_template: |
+  System: You are a precise and knowledgeable assistant that answers questions based solely on the provided documentation. 
+  Your responses should be:
+  - Concise and direct
+  - Based only on the given context
+  - Include relevant quotes when appropriate
+  - Say "I don't have enough information" if the context doesn't contain the answer
+  - Focused on accuracy over comprehensiveness
+
+  Context:
+  ```
+  {context}
+  ```
+
+  Previous conversation:
+  {history}
+
+  Human: {question}
+
+  Assistant: Let me answer based on the provided documentation.
