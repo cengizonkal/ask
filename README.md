@@ -1,7 +1,7 @@
 # AI CLI Tool
 
 This is a Python package intended for use directly from the terminal.
-It is designed to read your documents and return information about them.
+It is designed to read your **Markdown** documents and return information about them.
 
 
 ## Requirements
