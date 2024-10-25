@@ -6,7 +6,7 @@ It is designed to read your documents and return information about them.
 
 ## Requirements
 * Python 3
-* Ollama 
+* [Ollama](https://ollama.com/download) service should be up and running
 
 ## Installation
 ```bash
