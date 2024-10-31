@@ -4,10 +4,13 @@ from typing import List
 from pathlib import Path
 from rich.console import Console
 from langchain_chroma import Chroma
-from langchain_community.embeddings.ollama import OllamaEmbeddings
+
 from langchain.schema.document import Document
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.document_loaders import TextLoader
+
+from langchain_ollama import OllamaEmbeddings
+
 
 class DatabaseManager:
     def __init__(self, config):

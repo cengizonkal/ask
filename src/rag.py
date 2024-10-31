@@ -2,7 +2,8 @@ from typing import List, Tuple
 from rich.console import Console
 from rich.panel import Panel
 from langchain.prompts import ChatPromptTemplate
-from langchain_community.llms.ollama import Ollama
+
+from langchain_ollama import OllamaLLM
 from langchain.schema.document import Document
 
 class RAGSystem:
@@ -34,7 +35,7 @@ class RAGSystem:
                 history=history_text
             )
             
-            model = session.model if session else Ollama(model=self.config.llm_model)
+            model = session.model if session else OllamaLLM(model=self.config.llm_model)
             return model.invoke(prompt)
         except Exception as e:
             self.console.print(f"[red]Error generating response: {str(e)}[/red]")

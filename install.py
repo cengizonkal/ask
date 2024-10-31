@@ -17,10 +17,10 @@ def install_requirements():
         "langchain",
         "langchain-community",
         "langchain-chroma",
+        "langchain-ollama",
         "chromadb",
         "rich",  # For console formatting
         "PyYAML",  # For config file handling
-        "ollama",  # For LLM integration
     ]
     
     print("Installing required packages...")
